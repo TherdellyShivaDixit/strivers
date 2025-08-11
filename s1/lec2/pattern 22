@@ -1,0 +1,20 @@
+import java.lang.Math;
+public class Solution {
+    public static void getNumberPattern(int n) {
+        
+        for(int i=0;i<(2*n)-1;i++)
+        {
+            for(int j=0;j<(2*n)-1;j++)
+            {
+                int t=0;
+                int b=(2*n)-2;
+                int l=0;
+                int r=(2*n)-2;
+                int ans=Math.min(Math.min((i-t),(b-i)),Math.min((j-l),(r-j)));
+
+                System.out.print(n-ans);
+            }
+            System.out.println("");
+        }
+    }
+}
