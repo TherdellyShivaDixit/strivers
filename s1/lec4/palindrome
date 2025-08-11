@@ -1,0 +1,31 @@
+package strive.s1.lec4;
+
+import java.util.Scanner;
+
+public class Palindrome {
+	
+	public static void main(String[] args)
+	{
+		System.out.println("Eneter");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int num=n;
+		int rev=0;
+		int last=0;
+		while(n>0)
+		{
+			last=n%10;
+			rev=(rev*10)+last;
+			n=n/10;
+		}
+		if(num==rev)
+		{
+			System.out.print(true);
+		}
+		else
+		{
+			System.out.print(false);
+		}
+	}
+
+}
