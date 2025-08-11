@@ -1,0 +1,45 @@
+package strive.s1.lec4;
+
+import java.util.Scanner;
+
+public class reverseNumber {
+	
+	public static void main(String[] args)
+	{
+		System.out.println("Eneter");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int num=n;
+		int count=0;
+		do
+		{
+			n=n/10;
+			count++;
+		}
+        while(n!=0);
+		
+		int rev=0;
+        int mul=1;
+        int countT=count;
+        while(countT!=1)
+        {
+        		mul=mul*10;
+        		countT--;
+        }
+        
+        int temp=num;
+        int m;
+        int pos=1;
+        while(count!=0)
+        {
+            m=temp/mul;
+            temp=temp-m*mul;
+            mul=mul/10;
+            rev=rev+(m*pos);
+            pos=pos*10;
+            count--;
+        }
+        System.out.println(rev);
+	}
+
+}
