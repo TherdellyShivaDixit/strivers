@@ -1,1 +1,26 @@
+package strive.s1.lec4;
 
+import java.util.Scanner;
+
+public class Prime {
+
+	public static void main(String[] args)
+	{
+		System.out.println("Enter");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		boolean t=true;
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+			{
+				t=false;
+			}
+		}
+		if(n<2)
+		{
+			t=false;
+		}
+		System.out.print(t);
+	}
+}
