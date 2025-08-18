@@ -1,1 +1,26 @@
+package strive.s1.lec4;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Divisors {
+	
+	public static void main(String[] args)
+	{
+		System.out.println("Eneter");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		
+		ArrayList<Integer> l=new ArrayList<Integer>();
+		for(int i=1;i<=n;i++)
+		{
+			if(n%i==0)
+			{
+				l.add(i);
+				System.out.println(i);
+			}
+		}
+		l.sort(null);
+		System.out.println(l);
+	}
+}
