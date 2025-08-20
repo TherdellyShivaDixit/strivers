@@ -1,0 +1,24 @@
+package strive.s1.lec5;
+
+class striver
+{
+	public void printN(String name,int n)
+	{
+		if(n==0)
+		{
+			return;
+		}		
+		System.out.println(name);
+		
+		printN(name,n-1);
+	}
+}
+
+public class NNumbersRec {
+
+	public static void main(String args[])
+	{
+		striver s=new striver();
+		s.printN("shiva", 5);
+	}
+}
