@@ -1,0 +1,26 @@
+package strive.s1.lec5;
+
+class p1
+{
+
+	public void printN(int n)
+	{
+		if(n==0)
+		{
+			return;
+		}		
+		printN(n-1);
+		System.out.println(n);
+		
+	}
+}
+
+public class printNNumbers {
+
+	public static void main(String args[])
+	{
+		p1 s=new p1();
+		s.printN(5);
+	}
+}
+
