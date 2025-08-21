@@ -1,0 +1,27 @@
+package strive.s1.lec5;
+
+
+class p3
+{
+
+	public int sumN(int n)
+	{
+		if(n==1)
+		{
+			return 1;
+		}		
+		int sum=n+sumN(n-1);
+		return sum;
+		
+	}
+
+}
+public class sumOfNNumbers {
+
+	public static void main(String args[])
+	{
+		p3 sum=new p3();
+		System.out.println(sum.sumN(5));
+
+	}
+}
