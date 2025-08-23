@@ -1,0 +1,32 @@
+package strive.s1.lec5;
+
+import java.util.Arrays;
+
+class rev
+{
+
+	public int[] rev(int[] n,int s)
+	{
+		if(s<n.length/2+1)
+		{
+			return n;
+		}
+		int temp=n[s-1];
+		n[s-1]=n[n.length-s];
+		n[n.length-s]=temp;
+		n=rev(n,s-1);
+		return n;
+	}
+}
+
+public class reverseArray {
+	
+	public static void main(String args[])
+	{
+		rev r=new rev();
+		int[] n={1,2,3,4,5};
+		int[] k=r.rev(n,5);
+		System.out.println(Arrays.toString(k));
+	}
+
+}
