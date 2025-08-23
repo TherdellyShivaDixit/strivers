@@ -1,0 +1,29 @@
+package strive.s1.lec5;
+
+class Palin
+{
+	public boolean check(String pa,int i) 
+	{
+		if(i>(pa.length()/2))
+		{
+			return true;
+		}
+		boolean t=check(pa,i+1);
+		if(t&&pa.charAt(i)==(pa.charAt(pa.length()-i-1)))
+		{
+			return true;
+		}
+		 return false;
+	}
+}
+public class palindrome {
+	
+	public static void main(String args[])
+	{
+		Palin pal=new Palin();
+		String s="mada";
+		System.out.println(pal.check(s, 0));
+		
+	}
+
+}
