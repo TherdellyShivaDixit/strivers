@@ -1,0 +1,29 @@
+package strive.s1.lec5;
+
+class power
+{
+	public boolean powerOf2(int n)
+	{
+        double i=n/2.0;
+       if(i==1.0||n==1)
+       {
+        return true;
+       }
+       
+       else if(i<1.0||i!=Math.floor(i))
+       {
+        return false;
+       }
+        return powerOf2(n/2);
+	}
+}
+public class powerOf2 {
+	
+	public static void main(String args[])
+	{
+		power p=new power();
+		System.out.print(p.powerOf2(9));
+		
+	}
+
+}
