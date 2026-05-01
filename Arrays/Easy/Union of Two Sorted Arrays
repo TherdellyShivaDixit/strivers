@@ -1,0 +1,65 @@
+class Solution {
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+       
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        ArrayList<Integer> arr=new ArrayList<Integer>();
+        int i=0,j=0,k=0;
+        while(i<a.length&&j<b.length)
+        {
+            if(a[i]<b[j])
+            {
+                if(k==0||arr.get(k-1)!=a[i])
+                {
+                    arr.add(k++,a[i]);
+                }
+                i++;
+            }
+            else if(b[j]<a[i])
+            {
+                if(k==0||arr.get(k-1)!=b[j])
+                {
+                    arr.add(k++,b[j]);
+                }
+                j++;
+            }
+            else if(b[j]==a[i])
+            {
+                if(k==0||arr.get(k-1)!=b[j])
+                {
+                    arr.add(k++,b[j]);
+                }
+                j++;
+                i++;
+            }
+        }
+        
+        if(j==b.length)
+        {
+            while(i<a.length)
+            {
+                if(arr.get(k-1)!=a[i])
+                {
+                    arr.add(k++,a[i]);
+                }
+                i++;
+            }
+        }
+        if(i==a.length)
+        {
+            while(j<b.length)
+            {
+                if(arr.get(k-1)!=b[j])
+                {
+                    arr.add(k++,b[j]);
+                }
+                j++;
+            }
+        }
+        
+    
+        return arr;
+
+    }
+}
