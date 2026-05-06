@@ -1,0 +1,27 @@
+class Solution {
+    int maxLength(int arr[]) {
+        
+        HashMap<Integer,Integer> map=new HashMap<Integer,Integer>();
+        int prefixSum=0;
+        int longest=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            prefixSum=prefixSum+arr[i];
+            
+            if(prefixSum==0&&i+1>longest)
+            {
+                longest=i+1;
+            }
+            
+            if(map.containsKey(prefixSum))
+            {
+                int len=i-map.get(prefixSum);
+                
+                longest=Math.max(longest,len);
+            }
+            map.put(prefixSum,map.getOrDefault(prefixSum,i));
+        }
+        
+        return longest;
+    }
+}
