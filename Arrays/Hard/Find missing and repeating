@@ -1,0 +1,39 @@
+class Solution {
+    ArrayList<Integer> findTwoElement(int arr[]) {
+        
+        long sum=0;
+        long sumOfSquares=0;
+        
+        ArrayList<Integer> ans=new ArrayList<Integer>();
+        
+        long n=arr.length;
+        
+        long nn=(n*(n+1))/2;
+        long s=(n*(n+1)*((2*n)+1))/6;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            sum=sum+arr[i];
+            
+            long sq=(long)arr[i]*arr[i];
+            
+            sumOfSquares=sumOfSquares+sq;
+        }
+
+        
+        long xminusy=sum-nn;
+        
+        long diffSq=sumOfSquares-s;
+        
+        long xPlusY=diffSq/xminusy;
+        
+        int x=(int)(xminusy+xPlusY)/2;
+        
+        int y= (int)xPlusY-x;
+        
+        ans.add(x);
+        ans.add(y);
+        
+        return ans;
+    }
+}
