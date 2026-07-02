@@ -1,0 +1,68 @@
+class Solution {
+    public int minTime(int[] arr, int k) {
+        
+        int min=0;
+        
+        int minB=(arr.length+k-1)/k;
+        
+        int max=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            max=Math.max(max,arr[i]);
+        }
+        
+        min=max;
+        max=max*minB;
+        
+        while(min<=max)
+        {
+            int mid =min+(max-min)/2;
+            
+            if(check(arr,k,mid))
+            {
+                max=mid-1;
+            }
+            else
+            {
+                min=mid+1;
+            }
+        }
+        return min;
+    }
+    
+    private boolean check(int[] arr,int k, int time)
+    {
+        int current=0;
+        int painters=1;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>time)
+            {
+                return false;
+            }
+            
+            if(current+arr[i]>time)
+            {
+                painters++;
+                current=arr[i];
+                if(current>time&&i==arr.length-1)
+                {
+                    painters++;
+                }
+                
+            }
+            else
+            {
+                current+=arr[i];
+            }
+        }
+        
+        if(painters<=k)
+        {
+            return true;
+        }
+        return false;
+        
+    }
+}
